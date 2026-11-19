@@ -1,2 +1,6 @@
+
 streamlit
 gradio_client
+requests
+Pillow
+imageio-ffmpeg
