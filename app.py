@@ -42,6 +42,10 @@ def get_voices():
 
     return voices
 
+def extract_dialogue(prompt):
+    pattern = r'["“](.*?)["”]'
+    matches = re.findall(pattern, prompt, re.DOTALL)
+    return [text.strip() for text in matches if text.strip()]
 def make_speech(text, speaker_id, api_key, output_path):
     response = requests.post(
         TTS_URL,
