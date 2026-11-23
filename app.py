@@ -4,6 +4,7 @@ import tempfile
 import subprocess
 import requests
 import imageio_ffmpeg
+import re
 from pathlib import Path
 from PIL import Image, ImageOps
 from gradio_client import Client, handle_file
