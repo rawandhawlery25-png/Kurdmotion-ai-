@@ -92,16 +92,12 @@ duration = st.selectbox("ماوەی ڤیدیۆ", [3.5, 5.0])
 st.divider()
 st.subheader("🗣️ گفتوگۆی کوردی")
 
-dialogue_one = st.text_area(
-    "گفتوگۆی کەسی یەکەم",
-    placeholder="سڵاو، چۆنی؟",
-    max_chars=500
-)
+prompt_dialogues = extract_dialogue(prompt)
 
-dialogue_two = st.text_area(
-    "گفتوگۆی کەسی دووەم",
-    placeholder="باشم، سوپاس.",
-    max_chars=500
+has_dialogue = bool(
+    dialogue_one.strip()
+    or dialogue_two.strip()
+    or prompt_dialogues
 )
 
 try:
